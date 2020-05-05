@@ -52,6 +52,10 @@ namespace Task01
             {
                 Console.WriteLine("InvalidOperationException");
             }
+            catch (Exception)
+            {
+                Console.WriteLine("InvalidOperationException");
+            }
 
             
             // использовать синтаксис запросов!
@@ -67,9 +71,9 @@ namespace Task01
                 PrintEnumerableCollection<int>(arrQuery, ":");
                 PrintEnumerableCollection<int>(arrMethod, "*");
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("InvalidOperationException");
             }
         }
 
