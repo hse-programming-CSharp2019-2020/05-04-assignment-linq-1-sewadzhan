@@ -76,11 +76,12 @@ namespace Task01
         // P.S. Есть два способа, оставьте тот, в котором применяется LINQ...
         public static void PrintEnumerableCollection<T>(IEnumerable<T> collection, string separator)
         {
+            string s = string.Empty;
             foreach (var item in collection)
             {
-                Console.Write($"{item}{separator}");
+                s += $"{item}{separator}";
             }
-            Console.WriteLine();
+            Console.WriteLine(s.Substring(0, s.Length - 1));
         }
     }
 }
