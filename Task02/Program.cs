@@ -38,29 +38,66 @@ namespace Task02
 
         public static void RunTesk02()
         {
-            int[] arr;
+            int[] arr = null;
+            string s = Console.ReadLine();
             try
             {
                 // Попробуйте осуществить считывание целочисленного массива, записав это ОДНИМ ВЫРАЖЕНИЕМ.
-                arr = 
+                arr = ((s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)).Select(x => int.Parse(x))).ToArray();
             }
-            
-            
-            var filteredCollection = arr.
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("InvalidOperationException");
+                return;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("FormatException");
+                return;
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("OverflowException");
+                return;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("InvalidOperationException");
+            }
+
+
+            var filteredCollection = arr.TakeWhile(x => x != 0);
            
             try
             {
                 
                 // использовать статическую форму вызова метода подсчета среднего
-                double averageUsingStaticForm = 
+                double averageUsingStaticForm = filteredCollection.Sum(x => Math.Pow(x, 2)) / filteredCollection.Count();
+                Console.WriteLine($"{averageUsingStaticForm:F3}");
                 // использовать объектную форму вызова метода подсчета среднего
-                double averageUsingInstanceForm = 
+                double averageUsingInstanceForm = (from num in filteredCollection
+                                                   select Math.Pow(num, 2)).Sum() / filteredCollection.Count();
+                Console.WriteLine($"{averageUsingInstanceForm:F3}");
 
 
                 // вывести элементы коллекции в одну строку
-                filteredCollection.
+                filteredCollection.ToList().ForEach(x => Console.Write("{0} ", x));
             }
-          
+            catch (FormatException)
+            {
+                Console.WriteLine("FormatException");
+                return;
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("OverflowException");
+                return;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("InvalidOperationException");
+                return;
+            }
         }
         
     }
