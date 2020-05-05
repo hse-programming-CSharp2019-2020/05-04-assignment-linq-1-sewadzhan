@@ -51,14 +51,17 @@ namespace Task01
             catch (ArgumentNullException)
             {
                 Console.WriteLine("InvalidOperationException");
+                return;
             }
             catch (FormatException)
             {
                 Console.WriteLine("FormatException");
+                return;
             }
             catch (OverflowException)
             {
                 Console.WriteLine("OverflowException");
+                return;
             }
             catch (Exception)
             {
@@ -82,14 +85,17 @@ namespace Task01
             catch (FormatException)
             {
                 Console.WriteLine("FormatException");
+                return;
             }
             catch (OverflowException)
             {
                 Console.WriteLine("OverflowException");
+                return;
             }
             catch (Exception)
             {
                 Console.WriteLine("InvalidOperationException");
+                return;
             }
         }
 
