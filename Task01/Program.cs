@@ -52,6 +52,14 @@ namespace Task01
             {
                 Console.WriteLine("InvalidOperationException");
             }
+            catch (FormatException)
+            {
+                Console.WriteLine("FormatException");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("OverflowException");
+            }
             catch (Exception)
             {
                 Console.WriteLine("InvalidOperationException");
@@ -70,6 +78,14 @@ namespace Task01
             {
                 PrintEnumerableCollection<int>(arrQuery, ":");
                 PrintEnumerableCollection<int>(arrMethod, "*");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("FormatException");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("OverflowException");
             }
             catch (Exception)
             {
