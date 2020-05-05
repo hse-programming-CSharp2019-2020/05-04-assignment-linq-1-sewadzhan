@@ -48,10 +48,11 @@ namespace Task01
                 // Попробуйте осуществить считывание целочисленного массива, записав это ОДНИМ ВЫРАЖЕНИЕМ.
                 arr = ((s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)).Select(x => int.Parse(x))).ToArray();
             }
-            catch (Exception e)
+            catch (ArgumentNullException)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("InvalidOperationException");
             }
+
             
             // использовать синтаксис запросов!
             IEnumerable<int> arrQuery = from num in arr
