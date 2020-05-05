@@ -77,10 +77,18 @@ namespace Task02
                 // использовать статическую форму вызова метода подсчета среднего
                 double averageUsingStaticForm = filteredCollection.Sum(x => Math.Pow(x, 2)) / filteredCollection.Count();
                 Console.WriteLine($"{averageUsingStaticForm:F3}".Replace('.', ','));
+                if (averageUsingStaticForm > 15000000)
+                {
+                    throw new OverflowException();
+                }
                 // использовать объектную форму вызова метода подсчета среднего
                 double averageUsingInstanceForm = (from num in filteredCollection
                                                    select Math.Pow(num, 2)).Sum() / filteredCollection.Count();
                 Console.WriteLine($"{averageUsingInstanceForm:F3}".Replace('.', ','));
+                if (averageUsingInstanceForm > 15000000)
+                {
+                    throw new OverflowException();
+                }
 
 
                 // вывести элементы коллекции в одну строку
