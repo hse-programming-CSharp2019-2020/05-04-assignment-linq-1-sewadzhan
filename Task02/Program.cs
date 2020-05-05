@@ -70,7 +70,10 @@ namespace Task02
            
             try
             {
-                
+                if (filteredCollection.Count() == 0)
+                {
+                    throw new Exception();
+                }
                 // использовать статическую форму вызова метода подсчета среднего
                 double averageUsingStaticForm = filteredCollection.Sum(x => Math.Pow(x, 2)) / filteredCollection.Count();
                 Console.WriteLine($"{averageUsingStaticForm:F3}".Replace('.', ','));
