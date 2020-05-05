@@ -66,6 +66,7 @@ namespace Task01
             catch (Exception)
             {
                 Console.WriteLine("InvalidOperationException");
+                return;
             }
 
             
